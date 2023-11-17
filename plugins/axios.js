@@ -6,6 +6,10 @@ export default function ({
     if (error.response.status === 422) {
       store.dispatch('validation/setErrors', error.response.data.errors)
     }
+
+    if (error.response.status === 400) {
+      store.dispatch('validation/setErrors', error.response.data)
+    }
     return Promise.reject(error)
   })
 
