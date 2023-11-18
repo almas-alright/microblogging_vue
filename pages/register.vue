@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-container class="mt-5">
-      <RegisterUser/>
+      <RegisterUser />
     </b-container>
   </div>
 </template>
@@ -10,7 +10,6 @@
 import RegisterUser from '@/components/auth/RegisterUser'
 
 export default {
-  components: { RegisterUser },
-  layout: 'general'
+  components: { RegisterUser }
 }
 </script>

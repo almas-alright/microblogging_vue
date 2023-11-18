@@ -6,7 +6,7 @@
           <NavBar @logOut="logout" />
         </b-col>
         <b-col cols="9">
-          <ProfileHeader />
+          <ProfileHeader :username="user.username" />
           <CreatePost />
         </b-col>
       </b-row>

@@ -4,8 +4,8 @@
       <b-nav-item to="/">
         Home
       </b-nav-item>
-      <b-nav-item>
-        Find
+      <b-nav-item :to="{ name: 'explore' }">
+        Explore
       </b-nav-item>
       <b-nav-item :to="{ name: 'profile-username', params: { username: user.username } }">
         Profile

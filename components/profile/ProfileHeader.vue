@@ -17,9 +17,10 @@
           <br>
         </div>
         <div class="p-2 flex-fill bd-highlight">
-          <h5>{{ user.name }}</h5>
+          <h5>{{ userProfile.name }}</h5>
         </div>
         <div class="p-2 flex-fill bd-highlight">
+          following {{ following.length }}
           <br>
         </div>
       </div>
@@ -29,7 +30,32 @@
 
 <script>
 export default {
-  name: 'ProfileHeader'
+  name: 'ProfileHeader',
+  props: {
+    // eslint-disable-next-line vue/require-default-prop
+    username: {
+      type: String,
+      required: false
+    }
+  },
+  data () {
+    return {
+      userProfile: {},
+      following: []
+    }
+  },
+  created () {
+    this.getUserProfile()
+  },
+  methods: {
+    getUserProfile: function () {
+      const that = this
+      this.$axios.get(`/api/user/profile/${that.username}`).then((response) => {
+        that.userProfile = response.data.data
+        that.following = that.userProfile.following
+      })
+    }
+  }
 }
 </script>
 

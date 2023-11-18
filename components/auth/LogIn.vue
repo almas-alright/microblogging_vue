@@ -5,46 +5,60 @@
         <b-col offset-md="4" md="4">
           <div class="mb-3">
             <b-form-input
-              type="email"
               v-model="form.email"
+              type="email"
               :state="hasError(lv_errors, 'email')"
               aria-describedby="input-live-help input-live-feedback"
               placeholder="mail@example.com"
               trim
-            ></b-form-input>
-            <div class="invalid-feedback" v-if="lv_errors.email">{{ lv_errors.email[0] }}</div>
+            />
+            <div v-if="lv_errors.email" class="invalid-feedback">
+              {{ lv_errors.email[0] }}
+            </div>
           </div>
           <div class="mb-3">
             <b-form-input
-              type="password"
               v-model="form.password"
+              type="password"
               :state="hasError(lv_errors, 'password')"
               aria-describedby="input-live-help input-live-feedback"
               placeholder="password"
               trim
-            ></b-form-input>
-            <div class="invalid-feedback" v-if="lv_errors.password"> {{ lv_errors.password[0] }}</div>
+            />
+            <div v-if="lv_errors.password" class="invalid-feedback">
+              {{ lv_errors.password[0] }}
+            </div>
           </div>
-          <b-button size="sm" variant="dark" v-on:click="login()">Login</b-button>
-          <p v-if="!lv_errors.abc" class="text-info text-sm-center">do not have an account?
-            <nuxt-link to="/register">sign up</nuxt-link>
+          <b-button size="sm" variant="dark" @click="login()">
+            Login
+          </b-button>
+          <p v-if="!lv_errors.abc" class="text-info text-sm-center">
+            do not have an account?
+            <nuxt-link to="/register">
+              sign up
+            </nuxt-link>
           </p>
-          <div v-if="lv_errors.abc" class="text-danger text-sm-center bg-custom mx-3">forgot password?
-            <nuxt-link to="/forgot-password">reset password</nuxt-link>
+          <div v-if="lv_errors.abc" class="text-danger text-sm-center bg-custom mx-3">
+            forgot password?
+            <nuxt-link to="/forgot-password">
+              reset password
+            </nuxt-link>
           </div>
-          <div v-if="lv_errors.abc" class="text-warning text-sm-center bg-custom mx-3">or if you do not have an account
+          <div v-if="lv_errors.abc" class="text-warning text-sm-center bg-custom mx-3">
+            or if you do not have an account
             then
-            <nuxt-link to="/register">create an account</nuxt-link>
+            <nuxt-link to="/register">
+              create an account
+            </nuxt-link>
           </div>
         </b-col>
       </b-row>
     </b-container>
-
   </div>
 </template>
 
 <script>
-import utility from '../../mixins/utility'
+import utility from '@/mixins/utility'
 
 export default {
   mixins: [utility],

@@ -6,8 +6,7 @@
           <NavBar @logOut="logout" />
         </b-col>
         <b-col cols="9">
-          <ProfileHeader :username="$route.params.username" />
-          <AllPosts :username="$route.params.username" />
+          <ProfileSearch />
         </b-col>
       </b-row>
     </b-container>
@@ -16,12 +15,10 @@
 
 <script>
 import NavBar from '@/components/NavBar'
-import ProfileHeader from '@/components/profile/ProfileHeader'
-import AllPosts from '@/components/posts/AllPosts'
-
+import ProfileSearch from '@/components/profile/ProfileSearch'
 export default {
   name: 'Index',
-  components: { NavBar, AllPosts, ProfileHeader },
+  components: { NavBar, ProfileSearch },
   // layout: 'general',
   middleware: ['guest'],
   methods: {

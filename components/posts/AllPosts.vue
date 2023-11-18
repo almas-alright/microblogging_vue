@@ -17,7 +17,7 @@
 import LikeButton from '@/components/posts/LikeButton'
 export default {
 
-  name: 'SinglePost',
+  name: 'AllPosts',
   components: { LikeButton },
   props: {
     // eslint-disable-next-line vue/require-default-prop
