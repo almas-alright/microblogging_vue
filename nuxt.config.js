@@ -82,7 +82,7 @@ export default {
             method: 'get'
           },
           user: {
-            url: 'api/user/profile',
+            url: 'api/auth/user',
             method: 'get',
             propertyName: 'user'
           }
