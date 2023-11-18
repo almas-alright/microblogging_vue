@@ -130,7 +130,7 @@ export default {
       this.$axios.$post('api/auth/register', that.form)
         .then(function (response) {
           if (response.success) {
-            // that.login()
+            that.$router.push({ name: 'login' })
           }
         })
         .catch(function (error) {
@@ -138,7 +138,6 @@ export default {
           console.log(error)
         }).finally(function () {
           that.showLoader = false
-          that.$router.push({ name: 'login' })
         })
     },
     randomString (len, an) {

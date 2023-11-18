@@ -1,16 +1,18 @@
 <template>
   <div>
     <b-nav vertical>
-      <b-nav-item active>
+      <b-nav-item to="/">
         Home
       </b-nav-item>
       <b-nav-item>
         Find
       </b-nav-item>
-      <b-nav-item>
-        Another Link
+      <b-nav-item :to="{ name: 'profile-username', params: { username: user.username } }">
+        Profile
       </b-nav-item>
-      <b-nav-item @click="logout()">Logout</b-nav-item>
+      <b-nav-item @click="logout()">
+        Logout
+      </b-nav-item>
     </b-nav>
   </div>
 </template>

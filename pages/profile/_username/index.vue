@@ -7,7 +7,7 @@
         </b-col>
         <b-col cols="9">
           <ProfileHeader />
-          <CreatePost />
+          <AllPosts :username="$route.params.username" />
         </b-col>
       </b-row>
     </b-container>
@@ -17,11 +17,11 @@
 <script>
 import NavBar from '@/components/NavBar'
 import ProfileHeader from '@/components/profile/ProfileHeader'
-import CreatePost from '@/components/posts/CreatePost'
+import AllPosts from '@/components/posts/AllPosts'
 
 export default {
   name: 'Index',
-  components: { NavBar, CreatePost, ProfileHeader },
+  components: { NavBar, AllPosts, ProfileHeader },
   // layout: 'general',
   middleware: ['guest'],
   methods: {

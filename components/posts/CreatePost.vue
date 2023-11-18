@@ -1,14 +1,16 @@
 <template>
   <div>
-    <b-jumbotron>
+    <b-jumbotron class="mt-5">
       <b-form-textarea
         id="textarea-rows"
         v-model="post.content"
         placeholder="create post"
         rows="3"
-      ></b-form-textarea>
+      />
       <hr>
-      <b-button variant="primary" size="sm" @click="createPost">post</b-button>
+      <b-button variant="primary" size="sm" @click="createPost">
+        post
+      </b-button>
     </b-jumbotron>
   </div>
 </template>
