@@ -30,7 +30,7 @@
     "@nuxtjs/fontawesome": "^1.1.2",
     "eslint": "^8.24.0",
     "eslint-plugin-nuxt": "^4.0.0",
-    "eslint-plugin-vue": "^9.5.1",
+    "eslint-plugin-vue": "^9.21.1",
     "v-select2-component": "^0.4.7"
   }
 }
